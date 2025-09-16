@@ -1,11 +1,14 @@
 import express from 'express';
 import cors from 'cors';
 import axios from 'axios';
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const PORT = 5000;
-const GOOGLE_API_KEY = 'AIzaSyDU4bhVL-cEXGh2fELfl89rG4kP_nOx8XM';
-const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+const GOOGLE_API_KEY = process.env.GOOGLE_API_KEY;
+const API_URL = process.env.API_URL;
 
 // Middleware
 app.use(express.json());
